@@ -1,5 +1,3 @@
-from mpl_toolkits import mplot3d
-import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from utils import *
@@ -81,6 +79,6 @@ thetas_2_arr = np.squeeze(thetas_2_arr)
 ###############
 # Plot results.
 ###############
-make_plot(thetas_1_arr, thetas_2_arr, loss_1_arr, task_1_loss_fn_np, 1)
-make_plot(thetas_1_arr, thetas_2_arr, loss_2_arr, task_2_loss_fn_np, 2)
-make_plot(thetas_1_arr, thetas_2_arr, loss_arr, multi_task_loss_fn_np, 3)
+make_plot(thetas_1_arr, thetas_2_arr, loss_1_arr, task_1_loss_fn_np, 1, INIT_RANGE, gradient_surgery)
+make_plot(thetas_1_arr, thetas_2_arr, loss_2_arr, task_2_loss_fn_np, 2, INIT_RANGE, gradient_surgery)
+make_plot(thetas_1_arr, thetas_2_arr, loss_arr, multi_task_loss_fn_np, 3, INIT_RANGE, gradient_surgery)

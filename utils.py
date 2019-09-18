@@ -1,3 +1,5 @@
+from mpl_toolkits import mplot3d
+import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 
@@ -27,7 +29,7 @@ def compute_corrected_gradient(grad_1, grad_2):
 	conditional = projection_1_onto_2[0] / grad_2[0] > 0.
 	return tf.cond(conditional, lambda: grad_1, lambda: grad_1 - projection_1_onto_2)
 
-def make_plot(thetas_1_arr, thetas_2_arr, loss_arr, loss_function, task_id):
+def make_plot(thetas_1_arr, thetas_2_arr, loss_arr, loss_function, task_id, INIT_RANGE, gradient_surgery):
 	fig = plt.figure()
 	ax = plt.axes(projection='3d')
 
